@@ -1,3 +1,0 @@
-/home/hmogni/workspaces/stuff/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/hmogni/workspaces/stuff/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/hmogni/workspaces/stuff/cmake-build-debug/CMakeFiles/stuff.dir
