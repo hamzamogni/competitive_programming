@@ -1,18 +1,12 @@
 #include <iostream>
 #include <vector>
 
-#include "sum_of_left_leaves/sumOfLeftLeaves.h"
+#include "missing_number/missingNumber.h"
 
 
 using namespace std;
 
 int main() {
-    TreeNode tree(3);
-    tree.left = new TreeNode(9);
-    tree.right = new TreeNode(20);
-
-    tree.right->left = new TreeNode(15);
-    tree.right->right = new TreeNode(7);
-
-    cout << sumOfLeftLeaves(&tree) << endl;
+    vector<int> a = {9,6,4,2,3,5,7,0,1};
+    cout << missingNumber(a);
 }
