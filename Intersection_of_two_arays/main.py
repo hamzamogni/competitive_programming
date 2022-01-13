@@ -10,11 +10,8 @@ from typing import List
 
 
 class Solution:
-<<<<<<< HEAD
     # Time: o(m + n)
     # Space: o(min(m, n))
-=======
->>>>>>> e3c4ac4e1cdbc213dba1393d9a8285747753af94
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         '''
             We iterate over the first array, and count how many times
@@ -22,7 +19,6 @@ class Solution:
             then we iterate over the second array, when we find a number
             that exists in our map and the count is bigger than 0 then we
             add that number to our result.
-<<<<<<< HEAD
 
             To keep our map the smallest possible, and decrease space complexity,
             we will recall our function and ensure we always give the smallest
@@ -32,9 +28,6 @@ class Solution:
         if (len(nums1) > len(nums2)):
             return self.intersect(nums2, nums1)
 
-=======
-        '''
->>>>>>> e3c4ac4e1cdbc213dba1393d9a8285747753af94
         result = list()
         visited = dict()
 
