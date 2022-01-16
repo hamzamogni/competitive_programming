@@ -7,7 +7,16 @@ in it and return its index. If it does not exist, return -1.
 
 
 class Solution:
+    # Time: o(n)
+    # Space: o(n)
     def firstUniqChar(self, s: str) -> int:
+        """
+            We iterate over the string and count occurences
+            of each character.
+
+            then we reiterate over the string and return the
+            first chracter that appeared only once in the string
+        """
         char_count = dict()
 
         for char in s:
