@@ -20,7 +20,15 @@ class ListNode:
 
 
 class Solution:
+    # Time: o(n)
+    # Space: o(n)
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        """
+            We traverse our linked list and add visited
+            nodes to a hashmap, if we find a node that
+            already exists on the hash, it means that
+            we have detected a cycle.
+        """
         visited = set()
 
         current = head
@@ -55,5 +63,3 @@ def printList(head: ListNode) -> None:
 s = Solution()
 t1 = s.hasCycle(array2List([1]))
 t2 = s.hasCycle(array2List([1, 2, 3, 1]))
-
-print(t2)
