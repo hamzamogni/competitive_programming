@@ -10,6 +10,18 @@ COLOR_NONE='\033[0m'
 
 source ${SCRIPT_PATH}/lib/query_problem.sh
 
+filename=${1}
+extension="${filename##*.}"
+
+case ${extension} in
+     py )
+        FILE_TYPE="python"
+        ;;
+     cpp )
+        FILE_TYPE="cpp"
+        ;;
+esac
+
 function usage()
 {
 
@@ -48,5 +60,5 @@ query_problem ${URL} ${QUESTION_TITLE_SLUG}
 
 FILE=`echo ${FILE} | sed "s/.*\/competitive\//.\//"`
 
-echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [C++](${FILE})|${QUESTION_DIFFICULTY}|"
+echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [${FILE_TYPE}](${FILE})|${QUESTION_DIFFICULTY}|"
 

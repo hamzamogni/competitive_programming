@@ -9,6 +9,8 @@ SCRIPT_FILE=`basename $0`
 COLOR_INFO='\033[0;36m'
 COLOR_NONE='\033[0m'
 
+FILE_EXT=${2}
+
 source ${SCRIPT_PATH}/lib/query_problem.sh
 
 function usage()
@@ -50,7 +52,7 @@ mkdir -p ${dir_name}
 echo "Step 1 : Created \"${dir_name}\" directory!"
 cd ${dir_name}
 
-file=`${SCRIPT_PATH}/comments.sh ${leetcode_url} | grep updated | awk '{print $1}'`
+file=`${SCRIPT_PATH}/comments.sh ${leetcode_url} ${FILE_EXT} | grep updated | awk '{print $1}'`
 WORKING_DIR=`pwd`
 SRC="${dir_name}/${file}"
 SRC_FILE="${WORKING_DIR}/${file}"
