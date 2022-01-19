@@ -14,12 +14,12 @@ source ${SCRIPT_PATH}/lib/query_problem.sh
 function usage()
 {
 
-    echo -e "Usage: ${0} [url]"
+    echo -e "Usage: ${0} [url] [extension]"
     echo -e ""
     echo -e "Example:"
     echo -e ""
     echo -e "   Running workflow for a problem"
-    echo -e "   ${0} https://leetcode.com/problems/largest-number/"
+    echo -e "   ${0} https://leetcode.com/problems/largest-number/ cpp"
     echo -e ""
 }
 
@@ -30,7 +30,7 @@ function git_commit(){
     git commit -m "New Problem Solution - \"${TITLE}\""  "${FILE1}" "${FILE2}"
 }
 
-if [ $# -lt 1 ] || [[ "${1}" != ${LEETCODE_NEW_URL}* ]] && [[ "${1}" != ${LEETCODE_OLD_URL}* ]]; then
+if [ $# -lt 2 ] || [[ "${1}" != ${LEETCODE_NEW_URL}* ]] && [[ "${1}" != ${LEETCODE_OLD_URL}* ]]; then
     usage
     exit 255
 fi
