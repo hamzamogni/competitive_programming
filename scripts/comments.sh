@@ -3,7 +3,19 @@ set -e
 
 AUTHOR="NOBODY"
 COMMENT_TAG="//"
-FILE_EXT=".cpp"
+FILE_EXT=".${2}"
+
+case ${FILE_EXT} in
+     .c | .cpp | .java )
+         COMMENT_TAG="//"
+         ;;
+    .sh | .py )
+         COMMENT_TAG="#"
+         ;;
+      * )
+         echo "Bad file extension!"
+         exit 1;
+esac
 
 pushd `dirname $0` > /dev/null
 SCRIPT_PATH=`pwd -P`
