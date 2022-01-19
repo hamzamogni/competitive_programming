@@ -16,4 +16,5 @@ My solutions to problems from platforms like leetcode, euler, codeforces....etc
 |383|[Ransom Note](https://leetcode.com/problems/ransom-note) | [python](./python/ransomNote/RansomNote.py)|Easy|
 |387|[First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string) | [python](./python/firstUniqueCharacterInAString/FirstUniqueCharacterInAString.py)|Easy|
 |509|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number) | [python](./python/fibonacciNumber/FibonacciNumber.py)|Easy|
+|566|[Reshape the Matrix](https://leetcode.com/problems/reshape-the-matrix) | [python](./python/reshapeTheMatrix/ReshapeTheMatrix.py)|Easy|
 |997|[Find the Town Judge](https://leetcode.com/problems/find-the-town-judge) | [python](./python/findTheTownJudge/FindTheTownJudge.py)|Easy|
