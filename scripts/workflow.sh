@@ -72,8 +72,8 @@ readme=`echo "${readme}" | head -n 1`
 if [[ "$platform" == "macos" ]]; then
     echo $readme | pbcopy
 else
-    echo $readme
-    read -n 1 -s -r -p  "Please copy the line above & press any key continue to edit README.md"
+    echo $readme | xclip -in -selection clipboard
+    # read -n 1 -s -r -p  "Please copy the line above & press any key continue to edit README.md"
 fi
 echo "Step 5 : Copied the readme text to Clipboard!"
 nvim ${README_FILE}
