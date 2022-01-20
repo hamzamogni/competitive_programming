@@ -11,6 +11,17 @@ COLOR_NONE='\033[0m'
 
 FILE_EXT=${2}
 
+case ${FILE_EXT} in
+    cpp )
+         EMOJY="C++"
+         ;;
+    py )
+         EMOJY=":snake:"
+         ;;
+esac
+
+echo $EMOJY
+exit 255
 source ${SCRIPT_PATH}/lib/query_problem.sh
 
 function usage()
@@ -83,7 +94,7 @@ echo "Step 6 : Edited the \"README.md\"!"
 QUESTION_FRONTEND_ID=`echo "${readme}" | awk -F '|' '{print $2}'`
 QUESTION_DIFFICULTY=`echo "${readme}" | awk -F '|' '{print $5}'`
 QUESTION_TITLE=`echo "${readme}" | awk -F '|' '{print $3}' | sed 's/\[/\]/' |awk -F ']' '{print $2}'`
-commit="git commit -m \"New Problem Solution - \\\"${QUESTION_FRONTEND_ID}. ${QUESTION_TITLE}\\\"\""
+commit="git commit -m \":fire: :bomb: :fire: - \\\"${QUESTION_FRONTEND_ID}. ${QUESTION_TITLE}\\\"\ ${EMOJY}""
 
 echo "Step 7 : It's ready to commit to git repository ..."
 echo ""
