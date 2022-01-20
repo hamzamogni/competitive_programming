@@ -10,6 +10,8 @@ I try to document each solution and explain how it works.
 I put together this table as an index to make it easier to navigate the repo,
 I keep updating it along the way.
 
+Note: Click the green check marks to go to source code.
+
 | #   | Title                                                                                                                          | 🐍                                                                                                                      | C++                                                                  | Difficulty |
 | --- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------- |
 | 1   | [Two Sum](https://leetcode.com/problems/two-sum/)                                                                              | [:heavy_check_mark:](./python/twoSum/TwoSum.py)                                                                         | [:heavy_check_mark:](./cpp/twoSum/TwoSum.cpp)                        | Easy       |
