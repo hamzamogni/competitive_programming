@@ -38,7 +38,7 @@ function git_commit(){
     TITLE=$1
     FILE1=$2
     FILE2=$3
-    git commit -m "New Problem Solution - \"${TITLE}\""  "${FILE1}" "${FILE2}"
+    git commit -m ":fire: :bomb: :fire:- \"${TITLE}\" - ${EMOJY}"  "${FILE1}" "${FILE2}"
 }
 
 if [ $# -lt 2 ] || [[ "${1}" != ${LEETCODE_NEW_URL}* ]] && [[ "${1}" != ${LEETCODE_OLD_URL}* ]]; then
