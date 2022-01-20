@@ -60,5 +60,12 @@ query_problem ${URL} ${QUESTION_TITLE_SLUG}
 
 FILE=`echo ${FILE} | sed "s/.*\/competitive\//.\//"`
 
-echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [${FILE_TYPE}](${FILE})|${QUESTION_DIFFICULTY}|"
+case ${extension} in
+     py )
+        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [:heavy_check_mark:](${FILE})| :x: | ${QUESTION_DIFFICULTY}|"
+        ;;
+     cpp )
+        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | :x: | [:heavy_check_mark:](${FILE}) | ${QUESTION_DIFFICULTY} |"
+        ;;
+esac
 
