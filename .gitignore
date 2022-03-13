@@ -1,4 +1,6 @@
 .idea
 cmake-build-debug
 utils.py
+main
+.vscode
 requirements.txt
