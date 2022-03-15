@@ -67,8 +67,7 @@ public:
      *      Space: o(n)
      **/
     string simplifyPath(string path) {
-        vector<string> splitInput, 
-                        parsedParts;
+        vector<string> parsedParts;
 
         string tmp = "",
                 final = "";
@@ -78,24 +77,19 @@ public:
         // We split input path by the "/" character
         for (char chr: path) {
             if (chr == '/') {
-                splitInput.push_back(tmp);
-                tmp = "";
-                continue;
-            }
-            tmp += chr;
-        }
-
-        // we resolve the path according to rules
-        for (string part: splitInput) {
-            if (part == "." || part == "") {
-                continue;
-            } else if (part == "..") {
-                if (!parsedParts.size()) {
-                    continue;
+                if (tmp == "." || tmp == "") {
+                    tmp = "";
+                } else if (tmp == "..") {
+                    if (parsedParts.size()) {
+                        parsedParts.pop_back();
+                    }
+                } else {
+                    parsedParts.push_back(tmp);
                 }
-                parsedParts.pop_back();
+                
+                tmp = "";
             } else {
-                parsedParts.push_back(part);
+                tmp += chr;
             }
         }
 
@@ -121,5 +115,6 @@ int main()
     assert(s.simplifyPath("/home/") == "/home");
     assert(s.simplifyPath("/../") == "/");
     assert(s.simplifyPath("/home//foo") == "/home/foo");
+    assert(s.simplifyPath("/a//b////c/d//././/..") == "/a/b/c");
     return 0;
 }
