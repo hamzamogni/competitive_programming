@@ -2,5 +2,6 @@
 cmake-build-debug
 utils.py
 main
+main.cpp
 .vscode
 requirements.txt
