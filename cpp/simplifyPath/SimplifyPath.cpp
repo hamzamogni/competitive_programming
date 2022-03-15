@@ -48,4 +48,78 @@
  * 	path is a valid absolute Unix path.
  ******************************************************************************************************/
 
+#include <iostream>
+#include <vector>
+#include <string>
+#include <assert.h>
 
+using namespace std;
+
+class Solution
+{
+public:
+    /**
+     *  We will first split our string by the "/" character
+     *  then we will resolve our path and return it.
+     * 
+     *  Complexity:
+     *      Time: o(n)
+     *      Space: o(n)
+     **/
+    string simplifyPath(string path) {
+        vector<string> splitInput, 
+                        parsedParts;
+
+        string tmp = "",
+                final = "";
+
+        path += "/";
+
+        // We split input path by the "/" character
+        for (char chr: path) {
+            if (chr == '/') {
+                splitInput.push_back(tmp);
+                tmp = "";
+                continue;
+            }
+            tmp += chr;
+        }
+
+        // we resolve the path according to rules
+        for (string part: splitInput) {
+            if (part == "." || part == "") {
+                continue;
+            } else if (part == "..") {
+                if (!parsedParts.size()) {
+                    continue;
+                }
+                parsedParts.pop_back();
+            } else {
+                parsedParts.push_back(part);
+            }
+        }
+
+        // if we end up with empty path
+        // then we are at the root of
+        // our filesystem
+        if (!parsedParts.size()) {
+            return "/";
+        }
+
+        // we assemble the resolved path
+        // and return it
+        for (string part: parsedParts) {
+            final += "/" + part;
+        }
+        return final;
+    }
+};
+
+int main()
+{
+    Solution s = Solution();
+    assert(s.simplifyPath("/home/") == "/home");
+    assert(s.simplifyPath("/../") == "/");
+    assert(s.simplifyPath("/home//foo") == "/home/foo");
+    return 0;
+}
