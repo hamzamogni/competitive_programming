@@ -12,7 +12,10 @@ case ${FILE_EXT} in
     .sh | .py )
          COMMENT_TAG="#"
          ;;
-      * )
+    .sql )
+         COMMENT_TAG="--"
+         ;;
+    * )
          echo "Bad file extension!"
          exit 1;
 esac
@@ -135,7 +138,7 @@ fi
 get_author_name;
 
 #adding the Copyright Comments
-if  ! grep -Fq  "${COMMENT_TAG} Author :" $source_file ; then
+if  ! grep -Fq  "\${COMMENT_TAG} Author :" $source_file ; then
     sed -i.bak '1i\'$'\n'"${COMMENT_TAG} Source : ${leetcode_url}"$'\n' $source_file
     sed -i.bak '2i\'$'\n'"${COMMENT_TAG} Author : ${AUTHOR}"$'\n' $source_file
     sed -i.bak '3i\'$'\n'"${COMMENT_TAG} Date   : ${current_time}"$'\n' $source_file
@@ -191,7 +194,7 @@ function make_comments() {
 
 TMP_FILE=/tmp/tmp.txt
 case ${FILE_EXT} in
-     .c | .cpp | .java )
+     .c | .cpp | .java | .sql )
          make_comments  "${QUESTION_CONTENT}" clike "${TMP_FILE}"
          ;;
     .sh | .py )

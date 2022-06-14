@@ -18,6 +18,9 @@ case ${FILE_EXT} in
     py )
          EMOJY=":snake:"
          ;;
+    sql )
+         EMOJY="SQL"
+         ;;
 esac
 
 source ${SCRIPT_PATH}/lib/query_problem.sh
