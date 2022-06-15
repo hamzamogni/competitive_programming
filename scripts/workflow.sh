@@ -75,7 +75,7 @@ echo "Step 2 : Created \"${SRC}\" source file!"
 echo "Step 3 : Run \"git add ${SRC}\"!"
 git add ${SRC_FILE}
 
-# nvim "${SRC_FILE}"
+nvim "${SRC_FILE}"
 read -n 1 -s -r -p  "Edit your file & press any key continue"
 echo "Step 4 : Edited the \"${SRC}\"!"
 readme=`${SCRIPT_PATH}/readme.sh ${file}`
