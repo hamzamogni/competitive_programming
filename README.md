@@ -51,4 +51,5 @@ Note: Click the green check marks to go to source code.
 |182  |[Duplicate Emails](https://leetcode.com/problems/duplicate-emails/)                                                     | [:heavy_check_mark:](./sql/duplicateEmails/DuplicateEmails.sql) | Easy |
 |183  |[Customers Who Never Order](https://leetcode.com/problems/customers-who-never-order/) | [:heavy_check_mark:](./sql/customersWhoNeverOrder/CustomersWhoNeverOrder.sql) | Easy |
 |184  |[Department Highest Salary](https://leetcode.com/problems/department-highest-salary)  | [:heavy_check_mark:](./sql/departmentHighestSalary/DepartmentHighestSalary.sql) | Medium |
+|196|[Delete Duplicate Emails](https://leetcode.com/problems/delete-duplicate-emails) | [:heavy_check_mark:](./sql/deleteDuplicateEmails/DeleteDuplicateEmails.sql) | Easy |
 
