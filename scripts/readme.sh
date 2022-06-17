@@ -65,13 +65,13 @@ FILE=`echo ${FILE} | sed "s/.*\/competitive\//.\//"`
 
 case ${extension} in
      py )
-        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [:heavy_check_mark:](${FILE}) | :x: | :x: | ${QUESTION_DIFFICULTY}|"
+        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [:heavy_check_mark:](${FILE}) | :x: | ${QUESTION_DIFFICULTY}|"
         ;;
      cpp )
-        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | :x: | [:heavy_check_mark:](${FILE}) | :x: | ${QUESTION_DIFFICULTY} |"
+        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | :x: | [:heavy_check_mark:](${FILE}) | ${QUESTION_DIFFICULTY} |"
         ;;
      sql )
-        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | :x: | :x: | [:heavy_check_mark:](${FILE}) | ${QUESTION_DIFFICULTY} |"
+        echo "|${QUESTION_FRONTEND_ID}|[${QUESTION_TITLE}](${URL}) | [:heavy_check_mark:](${FILE}) | ${QUESTION_DIFFICULTY} |"
         ;;
 esac
 
