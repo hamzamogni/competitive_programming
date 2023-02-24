@@ -47,8 +47,8 @@ function usage()
 
 function get_author_name()
 {
-    TRUE_CMD=`which true`
-    git=`type -P git || ${TRUE_CMD}`
+    #TRUE_CMD=`which true`
+    git=`type -P git` # || ${TRUE_CMD}`
     if [ ! -z "${git}" ]; then
        AUTHOR=`git config --get user.name`
     else
@@ -87,8 +87,8 @@ platform=`detect_os`
 get_question_slug ${leetcode_url}
 
 
-TRUE_CMD=`which true`
-JQ=`type -P jq || ${TRUE_CMD}`
+#TRUE_CMD=`which true`
+JQ=`type -P jq` #|| ${TRUE_CMD}`
 if [ -z "${JQ}" ]; then
     echo "jq command is not found !"
     install_jq
@@ -147,13 +147,13 @@ if  ! grep -Fq  "\${COMMENT_TAG} Author :" $source_file ; then
 fi
 
 
-#echo "--------------"
-#echo "$QUESTION_CONTENT"
-#echo $QUESTION_DIFFICULTY
-#echo $QUESTION_TITLE
-#echo $QUESTION_ID
-#echo $QUESTION_CATEGORY
-#echo "--------------"
+echo "--------------"
+echo $QUESTION_CONTENT
+echo $QUESTION_DIFFICULTY
+echo $QUESTION_TITLE
+echo $QUESTION_ID
+echo $QUESTION_CATEGORY
+echo "--------------"
 
 
 function make_comments() {

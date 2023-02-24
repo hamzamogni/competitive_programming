@@ -60,9 +60,9 @@ get_question_slug ${leetcode_url}
 dir_name=`echo ${QUESTION_TITLE_SLUG} | awk -F '-' '{for (i=1; i<=NF; i++) printf("%s", toupper(substr($i,1,1)) substr($i,2)) }'`
 dir_name=`echo ${dir_name:0:1} | tr '[A-Z]' '[a-z]'`${dir_name:1}
 
-mkdir -p ${dir_name}
+mkdir -p ${2}/${dir_name}
 echo "Step 1 : Created \"${dir_name}\" directory!"
-cd ${dir_name}
+cd ${2}/${dir_name}
 
 file=`${SCRIPT_PATH}/comments.sh ${leetcode_url} ${FILE_EXT} | grep updated | awk '{print $1}'`
 WORKING_DIR=`pwd`
@@ -71,6 +71,9 @@ SRC_FILE="${WORKING_DIR}/${file}"
 README_FILE="${SCRIPT_PATH}/../README.md"
 
 echo "Step 2 : Created \"${SRC}\" source file!"
+
+exit 0
+
 
 echo "Step 3 : Run \"git add ${SRC}\"!"
 git add ${SRC_FILE}
