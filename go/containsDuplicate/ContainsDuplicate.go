@@ -27,6 +27,12 @@ package main
 
 import "fmt"
 
+// we create a hash map containing numbers already visited
+// once we find a number we already visited we return true
+// otherwise we return false
+// Complexity:
+//   - Time: o(n)
+//   - Space: o(1)
 func containsDuplicate(nums []int) bool {
 	exist := make(map[int]bool)
 
