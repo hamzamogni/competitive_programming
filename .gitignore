@@ -5,3 +5,4 @@ main
 main.cpp
 .vscode
 requirements.txt
+*.mod
