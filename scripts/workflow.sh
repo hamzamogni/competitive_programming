@@ -21,6 +21,8 @@ case ${FILE_EXT} in
     sql )
          EMOJY="SQL"
          ;;
+    go )
+         EMOJY="GO"
 esac
 
 source ${SCRIPT_PATH}/lib/query_problem.sh
@@ -72,7 +74,12 @@ README_FILE="${SCRIPT_PATH}/../README.md"
 
 echo "Step 2 : Created \"${SRC}\" source file!"
 
-exit 0
+case ${FILE_EXT} in
+    go )
+        go mod init ${dir_name}
+        ;;
+esac
+
 
 
 echo "Step 3 : Run \"git add ${SRC}\"!"

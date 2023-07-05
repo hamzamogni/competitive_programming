@@ -6,7 +6,7 @@ COMMENT_TAG="//"
 FILE_EXT=".${2}"
 
 case ${FILE_EXT} in
-     .c | .cpp | .java )
+     .c | .cpp | .java | .go )
          COMMENT_TAG="//"
          ;;
     .sh | .py )
@@ -194,7 +194,7 @@ function make_comments() {
 
 TMP_FILE=/tmp/tmp.txt
 case ${FILE_EXT} in
-     .c | .cpp | .java | .sql )
+     .c | .cpp | .java | .sql | .go )
          make_comments  "${QUESTION_CONTENT}" clike "${TMP_FILE}"
          ;;
     .sh | .py )
